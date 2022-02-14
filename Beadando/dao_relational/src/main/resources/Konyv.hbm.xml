@@ -1,0 +1,14 @@
+<hibernate-mapping xmlns="http://www.hibernate.org/xsd/hibernate-mapping">
+    <class name="uni.eszterhazy.keretrendszer.model.Konyv" table="konyv">
+        <id name="id" type="string" column="id"/>
+        <property name="cim" column="cim" type = "string"/>
+        <property name="kiadas" column="kiadas" type = "LocalDate"/>
+        <property name="oldalSzam" column="oldal_szam" type="int"/>
+        <property name="fajta" column="fajta">
+                  <type name="org.hibernate.type.EnumType">
+                      <param name="enumClass">uni.eszterhazy.keretrendszer.model.Fajta</param>
+                      <param name="useNamed">true</param>
+                  </type>
+        </property>
+    </class>
+</hibernate-mapping>
